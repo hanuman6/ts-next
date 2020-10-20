@@ -20,5 +20,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+      "jsx-a11y/anchor-is-valid": 0,
     }
 };

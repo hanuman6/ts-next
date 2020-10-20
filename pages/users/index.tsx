@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
@@ -11,7 +11,7 @@ type Props = {
   items: User[]
 };
 
-const WithStaticProps = ({ items }: Props) => (
+const WithStaticProps: FC<Props> = ({ items }: Props) => (
   <Layout title="Users List | Next.js + TypeScript Example">
     <h1>Users List</h1>
     <p>
@@ -23,9 +23,7 @@ const WithStaticProps = ({ items }: Props) => (
     <p>You are currently on: /users</p>
     <List items={items} />
     <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
+      <Link href="/">Go home</Link>
     </p>
   </Layout>
 );

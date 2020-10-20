@@ -1,13 +1,13 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, FC } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-type Props = {
-  children?: ReactNode
-  title?: string
-};
+type Props = Partial<{
+  children: ReactNode
+  title: string
+}>;
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout: FC<Props> = ({ children, title = 'This is the default title' }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -17,30 +17,30 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <header>
       <nav>
         <Link href="/">
-          <a>Home</a>
+          <a>ホーム</a>
         </Link>
         {' '}
         |
         {' '}
         <Link href="/about">
-          <a>About</a>
+          <a>サンプルページ</a>
         </Link>
         {' '}
         |
         {' '}
         <Link href="/users">
-          <a>Users List</a>
+          <a>リスト</a>
         </Link>
         {' '}
         |
         {' '}
-        <a href="/api/users">Users API</a>
+        <a href="/api/users">API</a>
       </nav>
     </header>
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span>here to stay (Footer)</span>
     </footer>
   </div>
 );

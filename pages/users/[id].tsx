@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { User } from '../../interfaces';
@@ -6,12 +6,12 @@ import { sampleUserData } from '../../utils/sample-data';
 import Layout from '../../components/Layout';
 import ListDetail from '../../components/ListDetail';
 
-type Props = {
-  item?: User
-  errors?: string
-};
+type Props = Partial<{
+  item: User
+  errors: string
+}>;
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const StaticPropsDetail: FC<Props> = ({ item, errors }: Props) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">

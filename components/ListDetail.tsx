@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { User } from '../interfaces';
 
@@ -6,7 +6,7 @@ type ListDetailProps = {
   item: User
 };
 
-const ListDetail = ({ item: user }: ListDetailProps) => (
+const ListDetail: FC<ListDetailProps> = ({ item: user }: ListDetailProps) => (
   <div>
     <h1>
       Detail for
